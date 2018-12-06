@@ -109,7 +109,7 @@ def gconnect():
     stored_gplus_id = login_session.get('gplus_id')
     if stored_credentials is not None and gplus_id == stored_gplus_id:
         response = make_response(json.dumps('User is already connected.'), 200)
-        respnse.header['Content-Type'] = 'application/json'
+        response.header['Content-Type'] = 'application/json'
         return response
     if stored_access_token is not None and gplus_id == stored_gplus_id:
         response = make_response(json.dumps('Current user is already connected.'), 200)
